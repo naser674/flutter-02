@@ -10,23 +10,31 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: AppBar(
+          title: Text('Atelier Flutter 02'),
+          backgroundColor: Colors.teal,
+          foregroundColor: Colors.white,
+        ),
         body: SingleChildScrollView(
+          padding: EdgeInsets.all(20),
           child: Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 // Etape 2 : Deux textes
                 Text('Hello World!'),
                 Text('Bienvenue dans Flutter'),
 
-                // Etape 3 : Container stylise
+                // Etape 3 : Container personnalise
                 Container(
-                  margin: EdgeInsets.all(20),
-                  padding: EdgeInsets.all(16),
+                  margin: EdgeInsets.all(24),
+                  padding: EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(18),
+                    color: Colors.teal,
+                    borderRadius: BorderRadius.circular(22),
                   ),
                   child: Text(
                     'Boîte stylisée avec Container',
@@ -36,11 +44,11 @@ class MyApp extends StatelessWidget {
 
                 Text('Mon premier Container'),
 
-                SizedBox(height: 20),
+                SizedBox(height: 25),
 
                 // Etape 4 : Stack
                 Stack(
-                  alignment: Alignment.topRight,
+                  alignment: Alignment.center,
                   children: [
                     Container(width: 200, height: 200, color: Colors.blue[100]),
                     Icon(Icons.star, size: 100, color: Colors.amber),
@@ -54,11 +62,11 @@ class MyApp extends StatelessWidget {
                   ],
                 ),
 
-                SizedBox(height: 20),
+                SizedBox(height: 30),
 
                 // Etape 5 : Row avec 4 icones
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Icon(Icons.home, color: Colors.blue, size: 40),
@@ -68,20 +76,28 @@ class MyApp extends StatelessWidget {
                   ],
                 ),
 
-                SizedBox(height: 20),
+                SizedBox(height: 30),
 
                 // Etape 6 : Deuxieme Column
                 Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Titre principal', style: TextStyle(fontSize: 26)),
-                    SizedBox(height: 20),
+                    Text(
+                      'Titre principal',
+                      style: TextStyle(
+                        fontSize: 30,
+                        color: Colors.teal,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    SizedBox(height: 15),
                     Text(
                       'Sous-titre ou description',
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(fontSize: 20),
                     ),
-                    Icon(Icons.thumb_up, color: Colors.green, size: 40),
+                    SizedBox(height: 15),
+                    Icon(Icons.thumb_up, color: Colors.green, size: 55),
                   ],
                 ),
               ],
