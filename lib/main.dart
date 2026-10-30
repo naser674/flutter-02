@@ -14,13 +14,12 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Etape 2 : Ajouter deux textes
+              // Etape 2 : Deux textes
               Text('Hello World!'),
               Text('Bienvenue dans Flutter'),
 
-              // Etape 3 : Ajouter un Container
+              // Etape 3 : Container stylise
               Container(
                 margin: EdgeInsets.all(20),
                 padding: EdgeInsets.all(16),
@@ -36,7 +35,20 @@ class MyApp extends StatelessWidget {
 
               Text('Mon premier Container'),
 
-              // Ajouter les prochains widgets ici
+              SizedBox(height: 20),
+
+              // Etape 4 : Stack
+              Stack(
+                alignment: Alignment.topRight,
+                children: [
+                  Container(width: 200, height: 200, color: Colors.blue[100]),
+                  Icon(Icons.star, size: 100, color: Colors.amber),
+                  Text(
+                    'Superposé !',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
